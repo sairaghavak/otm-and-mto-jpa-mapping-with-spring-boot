@@ -45,6 +45,10 @@ public class Invoice {
     this.totalPrice = totalPrice;
   }
 
+  public void setTotalPrice(Double totalPrice) {
+    this.totalPrice = totalPrice;
+  }
+
   public void setInvoiceLines(Set<InvoiceLine> invoiceLines) {
     this.invoiceLines = invoiceLines;
   }

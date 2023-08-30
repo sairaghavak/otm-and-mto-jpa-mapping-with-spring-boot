@@ -50,6 +50,8 @@ public class SpringBootMainClass {
       Invoice invoiceFromDb = firstInvoice.get();
       Set<InvoiceLine> lines = invoiceFromDb.getInvoiceLines();
       lines.removeIf(invoiceLine -> invoiceLine.getItem().equals("potato"));
+      invoiceFromDb.setTotalPrice(
+          lines.stream().mapToDouble(line -> line.getQuantity() * line.getUnitPrice()).sum());
       invoiceRepository.save(invoiceFromDb);
     }
 
