@@ -1,2 +1,18 @@
-# otm-and-mto-jpa-mapping-with-spring-boot
-One to Many and Many to One JPA Mapping sample with Spring Boot and H2 DB
+# 1-Many and Many-1 JPA Mapping With Spring Boot
+
+- Here is the list of important components in this SpringBoot Application.
+
+  - **Entities**
+    - `Invoice`
+    - `InvoiceLine`
+
+  - **Repository Interfaces**
+    - `InvoiceRepository`
+    - `InvoiceLineRepository`
+
+  - **Tables**
+    - `invoice`
+    - `invoice_line`
+
+- This sample application demonstrates the bi-directional assocaition between `Invoice` and `InvoiceLine` entities using JPA annitations `@OneToMany` and `@ManyToOne`.
+- Also it throws some light on usage of `CascadeType.ALL`, `orhpanRemoval=true`, and `FetchType.EAGER`

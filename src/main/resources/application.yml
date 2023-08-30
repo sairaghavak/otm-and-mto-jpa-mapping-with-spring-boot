@@ -1,0 +1,24 @@
+# @author sairaghavak
+server:
+  port: 2023
+
+spring:
+  datasource:
+    # url: jdbc:h2:mem:otm-mto  - For in-memory DB
+    url: jdbc:h2:file:/workspace/otm-mto-db # for file based persistent storage
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop # recommended for this demo ONLY
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  # To access its web-console in spring boot, simply add the following property
+  h2:
+    console:
+      enabled: true # To browse through the H2 DB console
+      path: /srk-h2
